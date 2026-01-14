@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Stylish Heading */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 107, 107, 0.6);
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* Fallback for browsers that don't support gradient text */
+    color: #fff;
+    /* Only apply transparent fill if gradient is supported */
+}
+
+body{
+    /* margin-top: 30px; */
+
+    background-color: #548687 ;
+    text-align: center;
+    
+}
+
+.container{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    height: 60vmin;
+    width : 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+
+}
+
+.box{
+    height : 18vmin;
+    width  : 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+    font-size: 8vmin;
+    color: maroon;
+    background-color: #ffffc7;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* X symbol styling */
+.x-symbol {
+    color: #e74c3c !important;
+    text-shadow: 2px 2px 4px rgba(231, 76, 60, 0.5);
+    background-color: #fdeaea !important;
+}
+
+/* O symbol styling */
+.o-symbol {
+    color: #3498db !important;
+    text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.5);
+    background-color: #eaf4fd !important;
+}
+
+/* Celebration Animations */
+.celebrate-x {
+    animation: jumpX 0.6s ease-in-out infinite;
+    color: #ff6b6b !important;
+    font-weight: bold;
+}
+
+.celebrate-o {
+    animation: jumpO 0.6s ease-in-out infinite;
+    color: #4ecdc4 !important;
+    font-weight: bold;
+}
+
+.celebrate-draw {
+    animation: shake 0.5s ease-in-out infinite;
+    background-color: #ffd93d !important;
+}
+
+/* X Jumping Animation */
+@keyframes jumpX {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-10px) scale(1.2);
+    }
+}
+
+/* O Bouncing Animation */
+@keyframes jumpO {
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) scale(1.1) rotate(-5deg);
+    }
+    75% {
+        transform: translateY(-8px) scale(1.1) rotate(5deg);
+    }
+}
+
+/* Shake Animation for Draw */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+/* Winner Message Animation */
+.winner-message {
+    animation: bounce 0.8s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: goldenrod;
+    border-radius: 1rem;
+    border: none;
+}
+
+#new-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: goldenrod;
+    border-radius: 1rem;
+    border: none;
+}
+
+#msg{
+    color: #ffffc7;
+    font-size: 5vmin;
+}
+.msg-container{
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+}
+.hide{
+    display: none;
+}
